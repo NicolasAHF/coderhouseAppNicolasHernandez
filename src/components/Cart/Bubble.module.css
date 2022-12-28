@@ -1,0 +1,7 @@
+.bubble{
+    background-color: red;
+    border-radius: 50%;
+    color: #fff;
+    padding: 1px 8px;
+    font-size: 0.8rem;
+}

@@ -14,7 +14,10 @@ function CarouselComponent() {
           alt="First slide"
         />
         <Carousel.Caption className={classes.text}>
-          <h3>Contactenos para reservar sus tortas personalizadas</h3>
+          <button className={classes.button}>
+          <h1>Satisfacer tu antojo dulce con los postres de Rosa</h1>
+          <h3>Postres caseros con amor</h3>
+          </button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item  className={classes.carousel}>
@@ -24,7 +27,7 @@ function CarouselComponent() {
           alt="Second slide"
         />
         <Carousel.Caption className={classes.text}>
-          <h3>Visite nuestro local para probar las mejores meriendas y postres</h3>
+          <button className={classes.button}><h1>Los mejores pasteles y dulces caseros de Rosa's Desserts</h1></button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item  className={classes.carousel}>
@@ -34,7 +37,7 @@ function CarouselComponent() {
           alt="Third slide"
         />
         <Carousel.Caption className={classes.text}>
-          <h3>Tambien contamos con diferentes tipos de cosas dulces como macarons, alfajores y mas</h3>
+          <button className={classes.button}><h1>Comience a hacer su pedido ahora</h1></button>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

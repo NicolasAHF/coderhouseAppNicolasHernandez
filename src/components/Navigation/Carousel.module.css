@@ -1,6 +1,6 @@
 .image{
-    width: 100%;
-    height: 40rem;
+    width: 1920px;
+    height: 1280px;
 }
 
 .carousel:after {
@@ -14,10 +14,25 @@
   }
 
 .carousel{
-    height: 30rem;
+    height: 60vh;
 }
 
 .text{
     color: white;
+    z-index: 1;
+}
+
+.button{
+    background-color: transparent;
+    color: white;
+    border: solid;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.button:hover{
+    border-radius: 15px;
+    border-color: black;
+    color: black;
     z-index: 1;
 }

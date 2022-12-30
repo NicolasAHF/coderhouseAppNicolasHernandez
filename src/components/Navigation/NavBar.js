@@ -22,9 +22,11 @@ const NavBarComponent = () => {
               id="nav-dropdown-dark-example"
               title="Categorias"
             >
-              <NavDropdown.Item href="#categorias/1">Tortas</NavDropdown.Item>
-              <NavDropdown.Item href="#categorias/2">Cafes</NavDropdown.Item>
+              <NavDropdown.Item href="#categorias/1">Ver todo</NavDropdown.Item>
+              <NavDropdown.Item href="#categorias/2">Tortas</NavDropdown.Item>
               <NavDropdown.Item href="#categorias/3">Cupcakes</NavDropdown.Item>
+              <NavDropdown.Item href="#categorias/4">Postres</NavDropdown.Item>
+              <NavDropdown.Item href="#categorias/5">Meriendas</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#contacto">
               Contacto

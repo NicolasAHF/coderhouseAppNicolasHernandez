@@ -1,0 +1,19 @@
+.footer{
+    display: flex;
+    flex-direction: columns;
+    position:absolute;
+    width:100%;
+    bottom:0px;
+    background-color: #DD81C8;
+    justify-content: space-around;
+    font-size: 12px;
+}
+
+.footerCenter{
+    text-align: center;
+}
+
+.instagram{
+    color: black;
+    font-size: 20px;
+}

@@ -2,16 +2,19 @@ import './App.css';
 import ItemListContainer from './components/Items/ItemListContainer';
 import CarouselComponent from './components/Navigation/Carousel';
 import NavBar from './components/Navigation/NavBar';
-import Footer from './components/Navigation/Footer';
 import './custom.scss';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  return (<>
-    <NavBar />
+  return (<BrowserRouter>
+    <NavBar/>
     <CarouselComponent />
-    <ItemListContainer greetings="Bienvenido a Rosas Desserts"/>
-    <Footer />
-  </>
+    <Routes>
+      <Route path="/" element={<ItemListContainer />}/>
+      <Route path="category/:id" element={<ItemListContainer />}/>
+      <Route path="item/:id" element={<ItemListContainer />}/>
+    </Routes>
+  </BrowserRouter>
   );
 }
 

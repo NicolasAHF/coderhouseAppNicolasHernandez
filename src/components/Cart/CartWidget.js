@@ -2,13 +2,13 @@ import classes from './CartWidget.module.css';
 import Bubble from "./Bubble";
 
 
-const CartWidget = () => {
+const CartWidget = (props) => {
 
 
   return (
     <div>
       <span className={classes.bubble}>
-        <Bubble />
+        <Bubble value={props.cart}/>
       </span>
       <button className={classes.cart}>
         <svg

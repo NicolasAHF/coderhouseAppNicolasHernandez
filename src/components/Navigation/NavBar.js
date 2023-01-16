@@ -4,14 +4,17 @@ import Navbar from "react-bootstrap/Navbar";
 import CartWidget from "../Cart/CartWidget";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import classes from './NavBar.module.css';
+import {Link} from "react-router-dom";
 
-const NavBarComponent = () => {
+const NavBarComponent = (props) => {
+  const cart = props.cart;
+  
   return (<>
     <Navbar bg="primary" expand="lg">
       <Container>
-        <Nav.Link href="#home">
+        <Link to="/" style={{color:"black"}}>
           <p className={classes.font}>Rosas Desserts</p>
-        </Nav.Link>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -22,17 +25,15 @@ const NavBarComponent = () => {
               id="nav-dropdown-dark-example"
               title="Categorias"
             >
-              <NavDropdown.Item href="#categorias/1">Ver todo</NavDropdown.Item>
-              <NavDropdown.Item href="#categorias/2">Tortas</NavDropdown.Item>
-              <NavDropdown.Item href="#categorias/3">Cupcakes</NavDropdown.Item>
-              <NavDropdown.Item href="#categorias/4">Postres</NavDropdown.Item>
-              <NavDropdown.Item href="#categorias/5">Meriendas</NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/:id">Ver todo</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/:id">Tortas</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/:id">Tortas para eventos</Link></NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#contacto">
               Contacto
             </Nav.Link>
           </Nav>
-          <CartWidget />
+          <CartWidget cart={cart}/>
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -1,7 +1,7 @@
 import classes from './Bubble.module.css';
 
 
-const Bubble = () => {
+const Bubble = (props) => {
 
     return (
         <span className={classes.bubble}>

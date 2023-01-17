@@ -12,7 +12,7 @@ const NavBarComponent = (props) => {
   return (<>
     <Navbar bg="primary" expand="lg">
       <Container>
-        <Link to="/" style={{color:"black"}}>
+        <Link to="/" className={classes.title}>
           <p className={classes.font}>Rosas Desserts</p>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -25,9 +25,9 @@ const NavBarComponent = (props) => {
               id="nav-dropdown-dark-example"
               title="Categorias"
             >
-              <NavDropdown.Item><Link to="/category/:id">Ver todo</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to="/category/:id">Tortas</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to="/category/:id">Tortas para eventos</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/1" className={classes.dropdown}>Ver todo</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/2" className={classes.dropdown}>Tortas</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/3" className={classes.dropdown}>Tortas para eventos</Link></NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#contacto">
               Contacto

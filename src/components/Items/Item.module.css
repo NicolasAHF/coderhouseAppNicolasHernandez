@@ -1,10 +1,15 @@
 .item{
     width: 18rem;
     margin: 20px;
+    
 }
 
 .image{
     width: 286px;
     height: 286px;
     background-size: cover;
+}
+
+.body{
+    text-decoration: none;
 }

@@ -25,9 +25,9 @@ const NavBarComponent = (props) => {
               id="nav-dropdown-dark-example"
               title="Categorias"
             >
-              <NavDropdown.Item><Link to="/category/1" className={classes.dropdown}>Ver todo</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to="/category/2" className={classes.dropdown}>Tortas</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to="/category/3" className={classes.dropdown}>Tortas para eventos</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/cupcakes" className={classes.dropdown}>Cupcakes</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/tortas" className={classes.dropdown}>Tortas</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/eventos" className={classes.dropdown}>Tortas para eventos</Link></NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#contacto">
               Contacto

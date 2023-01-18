@@ -20,7 +20,7 @@ function App() {
             </>
           }
         />
-        <Route path="category/:id" element={<ItemListContainer />} />
+        <Route path="category/:category" element={<ItemListContainer />} />
         <Route path="item/:id" element={<ItemDetail />} />
         <Route path="*" element={<h1 style={{textAlign:"center"}}>404 La ruta no existe</h1>} />
       </Routes>

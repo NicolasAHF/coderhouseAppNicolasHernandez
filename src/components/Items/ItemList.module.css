@@ -3,6 +3,7 @@
     flex-flow: row wrap;
     width: 80%;
     margin: 0 auto;
+    margin-right: 100px;
     padding: 20px;
     justify-content: flex-start;
  }

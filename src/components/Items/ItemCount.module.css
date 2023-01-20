@@ -1,0 +1,9 @@
+.cart{
+    color: black;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 25px;
+    margin-top: 15px;
+    width: 100%;
+}

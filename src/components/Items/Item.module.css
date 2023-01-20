@@ -7,7 +7,7 @@
 .image{
     width: 286px;
     height: 286px;
-    background-size: cover;
+    object-fit: cover;
 }
 
 .body{

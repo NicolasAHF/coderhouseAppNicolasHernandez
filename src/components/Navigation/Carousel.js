@@ -6,18 +6,16 @@ import classes from './Carousel.module.css';
 
 function CarouselComponent() {
   return (
-    <Carousel>
+    <Carousel variant="primary">
       <Carousel.Item  className={classes.carousel}>
         <img
           className={classes.image}
           src={cake}
           alt="First slide"
         />
-        <Carousel.Caption className={classes.text}>
-          <button className={classes.button}>
+        <Carousel.Caption>
           <h1>Satisfacer tu antojo dulce con los postres de Rosa</h1>
           <h3>Postres caseros con amor</h3>
-          </button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item  className={classes.carousel}>
@@ -26,8 +24,8 @@ function CarouselComponent() {
           src={dish}
           alt="Second slide"
         />
-        <Carousel.Caption className={classes.text}>
-          <button className={classes.button}><h1>Los mejores pasteles y dulces caseros de Rosa's Desserts</h1></button>
+        <Carousel.Caption>
+          <h1>Los mejores pasteles y dulces caseros de Rosa's Desserts</h1>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item  className={classes.carousel}>
@@ -36,8 +34,8 @@ function CarouselComponent() {
           src={colorful}
           alt="Third slide"
         />
-        <Carousel.Caption className={classes.text}>
-          <button className={classes.button}><h1>Comience a hacer su pedido ahora</h1></button>
+        <Carousel.Caption variant="primary">
+          <h1>Comience a hacer su pedido ahora</h1>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

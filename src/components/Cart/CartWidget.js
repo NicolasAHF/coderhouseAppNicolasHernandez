@@ -1,16 +1,18 @@
 import classes from './CartWidget.module.css';
 import Bubble from "./Bubble";
+import { cartContext } from '../../context/CartContext';
+import { useContext } from 'react';
 
 
 const CartWidget = (props) => {
-
+  const {showCart, setShowCart, totalQuantities} = useContext(cartContext);
 
   return (
     <div>
       <span className={classes.bubble}>
-        <Bubble value={props.cart}/>
+        <Bubble value={totalQuantities}/>
       </span>
-      <button className={classes.cart}>
+      <button className={classes.cart} onClick={() => setShowCart(!showCart)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"

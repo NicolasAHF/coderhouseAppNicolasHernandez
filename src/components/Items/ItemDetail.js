@@ -8,7 +8,7 @@ const ItemDetail = ({product}) => {
     <>
       <div className={classes.details}>
         <div className={classes.img}>
-          <img src={product.pictureUrl} alt={product.title} />
+          <img src={`/${product.pictureUrl}`} alt={product.title} />
         </div>
         <div className={classes.box}>
           <div className={classes.row}>

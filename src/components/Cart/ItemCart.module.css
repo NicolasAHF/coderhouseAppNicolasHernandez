@@ -1,0 +1,15 @@
+.items{
+    padding: .25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.image{
+    width: 100px;
+    height: 100px;
+}
+
+.remove{
+    width: 30%;
+    font-size: 10px;
+}

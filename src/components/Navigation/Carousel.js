@@ -6,7 +6,7 @@ import classes from './Carousel.module.css';
 
 function CarouselComponent() {
   return (
-    <Carousel variant="primary">
+    <Carousel>
       <Carousel.Item  className={classes.carousel}>
         <img
           className={classes.image}

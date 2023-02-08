@@ -26,7 +26,7 @@ const CartProvider = ({ children }) => {
       if (foundProduct.quantity > 1) {
         setCart([
           ...newCart,
-          { ...foundProduct, quantity: foundProduct.quantity + 1 },
+          { ...foundProduct, quantity: foundProduct.quantity - 1 },
         ]);
         setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
         setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - 1);
@@ -70,6 +70,7 @@ const CartProvider = ({ children }) => {
 
       setCart([...cart, { ...product }]);
     }
+    setQty(1);
   };
 
   const removeItem = (id) => {

@@ -2,15 +2,21 @@ import { cartContext } from "../../context/CartContext";
 import { useContext, useState, useEffect } from "react";
 import classes from "./Cart.module.css";
 import ItemCart from "./ItemCart";
+import Modal from "../modal/modal";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 
-const Cart = (props) => {
-  const { totalPrice, totalQuantities, cart, clear } = useContext(cartContext);
-
+const Cart = () => {
+  const { totalPrice, totalQuantities, cart, clear, setShowCart } =
+    useContext(cartContext);
+  const [showModal, setShowModal] = useState(false);
   const [order, setOrder] = useState({});
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [emailConfirm, setEmailConfirm] = useState("");
   const [phone, setPhone] = useState("");
+  const [orderId, setOrderId] = useState("");
+  const [error, setError] = useState("");
+  const [showError, setShowError] = useState(false);
 
   useEffect(() => {
     setOrder({
@@ -27,12 +33,39 @@ const Cart = (props) => {
     });
   }, [name, email, phone]);
 
-  const saveOrder = async () => {
+  const validateFields = () => {
+    if (
+      email.trim().length === 0 ||
+      emailConfirm.trim().length === 0 ||
+      phone.trim().length === 0 ||
+      name.trim().length === 0
+    ) {
+      setError("los campos no pueden ser vacios")
+      setShowError(true);
+      return;
+    }
+    if (email !== emailConfirm) {
+      setError("los email no coinciden");
+      setShowError(true);
+      return;
+    }
+    if (!email.includes('@') && !email.includes('.')) {
+      setError("ingrese un email valido");
+      setShowError(true);
+      return;
+    }
+    saveOrder();
+  };
+
+  const saveOrder = () => {
+    setShowError(false);
+    setError("");
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
     addDoc(ordersCollection, order)
-      .then(() => {
-        alert("Tu compra se completo con éxito");
+      .then((response) => {
+        setOrderId(response.id);
+        setShowModal(true);
       })
       .catch((error) => console.log(error));
     clear();
@@ -60,10 +93,19 @@ const Cart = (props) => {
             <form className={classes.form}>
               <input
                 placeholder="email"
+                type="email"
                 onChange={(event) => {
                   setEmail(event.target.value);
                 }}
                 value={email}
+              ></input>
+              <input
+                placeholder="Confirmar Email"
+                type="email"
+                onChange={(event) => {
+                  setEmailConfirm(event.target.value);
+                }}
+                value={emailConfirm}
               ></input>
               <input
                 placeholder="Telefono"
@@ -71,6 +113,7 @@ const Cart = (props) => {
                   setPhone(event.target.value);
                 }}
                 value={phone}
+                type="tel"
               ></input>
               <input
                 placeholder="Nombre"
@@ -78,18 +121,30 @@ const Cart = (props) => {
                   setName(event.target.value);
                 }}
                 value={name}
+                type="text"
               ></input>
+              {showError && <span className={classes.error}>{error}</span>}
             </form>
-            <button onClick={saveOrder} className={classes.btn}>
+            <button onClick={validateFields} className={classes.btn} disabled={!email || !name || !emailConfirm || !phone}>
               Completar Compra
             </button>
-            <button onClick={() => clear()} className={classes.btn}>
+            <button onClick={() => { clear(); setShowError(false) }} className={classes.btn}>
               Vaciar
             </button>
           </>
         )}
         <h5>Precio Total: ${totalPrice}</h5>
       </div>
+      {showModal && (
+        <Modal
+          id={orderId}
+          show={showModal}
+          onClose={() => {
+            setShowModal(false);
+            setShowCart(false);
+          }}
+        />
+      )}
     </>
   );
 };

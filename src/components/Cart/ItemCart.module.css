@@ -19,3 +19,8 @@
     margin: .5rem;
     padding: .25rem;
 }
+
+.remove:hover{
+    background-color: rgb(158, 92, 142);
+    color: white;
+}

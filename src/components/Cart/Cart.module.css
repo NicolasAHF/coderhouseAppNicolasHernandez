@@ -34,9 +34,29 @@
     padding: .25rem;
 }
 
+.btn:disabled{
+    background-color: rgb(125, 125, 125);
+    color: black;
+}
+
+.btn:hover{
+    background-color: rgb(158, 92, 142);
+    color: white;
+}
+
+.btn:disabled:hover{
+    background-color: rgb(125, 125, 125);
+    color: black;
+}
+
 .form{
     display: flex;
     flex-direction: column;
     width: 40%;
-    margin: .25rem;
+    padding: 1rem;
+}
+
+.error{
+    color: red;
+    font-size: 10px;
 }

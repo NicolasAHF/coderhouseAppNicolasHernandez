@@ -26,12 +26,10 @@
     color: white;
     border: solid;
     border-radius: 15px;
-    z-index: 1;
 }
 
 .button:hover{
     border-radius: 15px;
     border-color: black;
     color: black;
-    z-index: 1;
 }

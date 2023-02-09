@@ -74,7 +74,7 @@ const Cart = () => {
     setPhone("");
   };
 
-  return (
+  return ( 
     <>
       <div className={classes.cartContainer}>
         <div className={classes.header}>

@@ -15,7 +15,7 @@ const ItemCart = ({ product }) => {
         className={classes.image}
       />
       <button className={classes.remove} onClick={() => removeItem(product.id)}>Remover producto</button>
-      <p>{product.title}</p>
+      <h2>{product.title}</h2>
       <InputGroup>
         <Button variant="outline-secondary" id="button-addon1" onClick={() => cartProductsQty(product.id, "dec")}>
           -
